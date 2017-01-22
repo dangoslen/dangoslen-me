@@ -1,0 +1,64 @@
+@import "skeleton.css";
+
+
+/* Variables and re-usability */
+@icon-font-size: 5.0rem;
+@default-padding: 9rem;
+@orange: #fd863f;
+@shadow-grey: #7b6a6a;
+
+.padded-section {
+    padding-top: @default-padding;
+    padding-bottom: @default-padding;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.larger-bracket {
+    font-size: 125%;
+}
+
+/* Global Settings */
+a {
+    text-decoration: none;
+    color: desaturate(color(@orange), 40%);
+}
+
+a:hover {
+    cursor: pointer;
+    color: @orange;
+}
+
+/* Header styles */
+.header {
+    .padded-section;
+    color: white;
+    background-color: @orange;
+    box-shadow: inset 0px -5px 10px 0px @shadow-grey;
+}
+
+.header h1 span {
+    text-shadow: -4px 4px @shadow-grey;
+    vertical-align: middle;
+}
+
+.header h1 span:nth-child(even) {
+    padding: 10px;
+    .larger-bracket;
+}
+
+.main {
+   .padded-section;
+   
+}
+
+.main .description {
+    .larger-bracket;
+}
+
+.lower-icon {
+    font-size: @icon-font-size;
+}
