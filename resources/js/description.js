@@ -23,5 +23,15 @@ angular.module('dangoslen-me', [])
                 }, 2000, descriptions.length);
             }    
         };
+    }])
+    .directive('modal', [function() {
+        return {
+            scope: {
+                title: '@'
+            },
+            template: 
+                '<div class="modal-overlay"><div class="container modal-container"><div class="row"><div class="eight modal-content"><h2>{{title}}</h2><ng-transclude></ng-transclude></div></div></div></div>',
+            transclude: true
+        };
     }]);
     
