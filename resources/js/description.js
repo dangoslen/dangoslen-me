@@ -27,10 +27,11 @@ angular.module('dangoslen-me', [])
     .directive('modal', [function() {
         return {
             scope: {
+            	open: '=',
                 title: '@'
             },
             template: 
-                '<div class="modal-overlay"><div class="container modal-container"><div class="row"><div class="eight modal-content"><h2>{{title}}</h2><ng-transclude></ng-transclude></div></div></div></div>',
+                '<div class="modal-overlay"><div class="container modal-container"><div class="modal-content"><div class="pull-right clear"><a id="close-button" ng-click="open=false"><i class="fa fa-times" aria-hidden="true"></i></a></div><h2>{{title}}</h2><ng-transclude></ng-transclude></div></div></div>',
             transclude: true
         };
     }]);

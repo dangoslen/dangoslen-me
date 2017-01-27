@@ -49,63 +49,67 @@
         </div>
         <div class="links row">
            <div class="two columns">
-               <div class="center"> 
+               <div class="center centered-text"> 
                     <a href="https://www.github.com/dangoslen" target="_blank">
                     <span class="lower-icon"><i class="fa fa-github" aria-hidden="true"></i></span>
                     <div>Code</div>
                 </div>
            </div>
            <div class="two columns">
-               <div class="center">
+               <div class="center centered-text">
                     <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
                     <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
                     <div>Professional</div>
                 </div>
            </div>
            <div class="two columns">
-               <div class="center">
+               <div class="center centered-text">
                     <a href="https://music.dangoslen.me" target="_blank">
                     <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
                     <div>Recordings</div>
                </div>
            </div>
            <div class="two columns">
-                <div class="center">
+                <div class="center centered-text">
                     <a href="https://medium.com/@dangoslen" target="_blank">
                     <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
                     <div>Writings</div>
                 </div>
            </div>
            <div class="two columns">
-                <div class="center">
+                <div class="center centered-text">
                     <a href="https://www.twitter.com/@dangoslen" target="_blank">
                     <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
                     <div>Twitter</div>
                 </div>
            </div>
            <div class="two columns">
-                <div class="center">
-                    <a>
+                <div class="center centered-text">
+                    <a ng-click="showEmailModal=true" ng-init="showEmailModal=false">
                     <span class="lower-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                     <div>Email Me</div>
+                    </a>
                 </div>
            </div>
 	</section>    
 	<section>
-	   <modal title="Email Me">
+	   <modal title="Email Me" open="showEmailModal" id="email-me-modal" ng-class="{ 'hidden': !showEmailModal }" >
              <form>
                 <div class="row">
-                <div class="four columns">
-                    <label>Name</label>
-                    <input type="text" />
-                    <label>Email Address</label>
-                    <input type="text" />
-                    <label>Subject</label>
-                    <input type="text" />
+                	<div class="six columns">
+                    	<label>Name</label>
+                    	<input class="u-full-width" type="text" />
+                    </div>
+                    <div class="six columns">
+	                    <label>Email Address</label>
+                    	<input class="u-full-width" type="email" />
+                    </div>
                 </div>
-                <div class="six columns">
-                    <label>Message</label>
-                </div>
+                <div class="row">
+                	<div class="twelve columns">
+                    	<label>Message</label>
+                    	<textarea class="u-full-width"></textarea>
+                	</div>
                 </div>
             </form>
 	   </modal>

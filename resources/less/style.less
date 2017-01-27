@@ -7,6 +7,10 @@
 @orange: #fd863f;
 @shadow-grey: #7b6a6a;
 
+body {
+    color: shadow-grey;
+}
+
 .padded-section {
     padding-top: @default-padding;
     padding-bottom: @default-padding;
@@ -17,8 +21,20 @@
     float: none;
 }
 
-.larger-bracket {
+.centered-text {
+	text-align: center;
+}
+
+.larger-text {
     font-size: 125%;
+}
+
+.rounded-corners {
+	border-radius: 20px;
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 /* Global Settings */
@@ -30,6 +46,16 @@ a {
 a:hover {
     cursor: pointer;
     color: @orange;
+}
+
+/* Skeleton blue outline override */
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+    border: 1px solid @orange;
+    outline: 0;
+}
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+	color: @shadow-grey;
 }
 
 /* Header styles */
@@ -47,7 +73,7 @@ a:hover {
 
 .header h1 span:nth-child(even) {
     padding: 10px;
-    .larger-bracket;
+    .larger-text;
 }
 
 .main {
@@ -56,7 +82,7 @@ a:hover {
 }
 
 .main .description {
-    .larger-bracket;
+    .larger-text;
 }
 
 .lower-icon {
@@ -91,13 +117,19 @@ a:hover {
 
 .modal-content {
     .center;
+    .rounded-corners;
+    min-width: 300px;
     background: white;
-    margin: 0 auto;
     box-shadow: 0px 0px 6px 6px #313131;
-    padding: 10px;
+    padding: 16px;
     content: @shadow-grey;
 }
 
 .modal-content label, h2 {
     color: @shadow-grey;
+}
+
+form textarea {
+	max-width: 100%;
+	max-height: 100%;
 }
