@@ -34,18 +34,24 @@
         <div class="container">
 
         <div class="row">
-            <h2>Hi Friend!</h2>
-            <p>
-            My name is Dan. You probably knew that already, but a little redundancy never hurt anyone right?
-            </p>
-            <p>
-            But you might not know all the things I consider myself to be. I'm a <my-description></my-description>.
-            </p>
-            <p>
-            Well, fill in the blank I guess. This is just a quick personal landing page for "all things Dan" I suppose. Below you will 
-            find links to my vairous online presences for coding, writing, recordings, professional resume and a few other things. I'm a fan of 
-            "write once" principles, so I don't have much here besides a few pointers to other references. Lets hope you don't hit any null pointers... 
-            and if you do, please message me by clicking the email icon below!</p>
+			
+            	<h2>Hi Friend!</h2>
+            	<p>
+            	My name is Dan. You probably knew that already, but a little redundancy never hurt anyone right? What you might not know is all the things I consider myself to be. I'm a:
+            	<my-description></my-description>
+            	</p>
+            
+        </div>
+        <div class="row">
+            	<p>
+            	Well, fill in the blank I guess. This is just a quick personal landing page for "all things Dan". Below you will 
+	            find links to my vairous online presences for coding, writing, recordings, professional resume and a few other things. I'm a fan of 
+    	        write once principles, so I don't have much here besides a few pointers to other references. Lets hope you don't hit any <code>null</code> values... 
+        	    and if you do, please message me by clicking the email icon below.
+        	    </p>
+        	    <p>
+        	    Thanks for visiting!
+        	    </p>
         </div>
         <div class="links row">
            <div class="two columns">
@@ -64,7 +70,7 @@
            </div>
            <div class="two columns">
                <div class="center centered-text">
-                    <a href="https://music.dangoslen.me" target="_blank">
+                    <a href="http://music.dangoslen.me" target="_blank">
                     <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
                     <div>Recordings</div>
                </div>
@@ -94,21 +100,21 @@
 	</section>    
 	<section>
 	   <modal title="Email Me" open="showEmailModal" id="email-me-modal" ng-class="{ 'hidden': !showEmailModal }" >
-             <form>
+             <form name="emailMeForm" novalidate>
                 <div class="row">
-                	<div class="six columns">
+                	<div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
                     	<label>Name</label>
-                    	<input class="u-full-width" type="text" />
+                    	<input name="name" type="text" class="u-full-width" ng-model="name" required />
                     </div>
-                    <div class="six columns">
+                    <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
 	                    <label>Email Address</label>
-                    	<input class="u-full-width" type="email" />
+                    	<input name="email" type="email" class="u-full-width" ng-model="emai" required />
                     </div>
                 </div>
                 <div class="row">
                 	<div class="twelve columns">
                     	<label>Message</label>
-                    	<textarea class="u-full-width"></textarea>
+                    	<textarea class="u-full-width" name="message" ng-model="message" required></textarea>
                 	</div>
                 </div>
             </form>

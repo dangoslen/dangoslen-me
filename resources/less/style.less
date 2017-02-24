@@ -6,6 +6,7 @@
 @default-padding: 9rem;
 @orange: #fd863f;
 @shadow-grey: #7b6a6a;
+@error-red: #a94442;
 
 body {
     color: shadow-grey;
@@ -89,10 +90,6 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     font-size: @icon-font-size;
 }
 
-.links div {
-    margin-bottom: 1.5rem;
-}
-
 .links a div {
     margin-top: 1.5rem;
 }
@@ -133,3 +130,9 @@ form textarea {
 	max-width: 100%;
 	max-height: 100%;
 }
+
+/* Forms */ 
+.has-error input {
+    border-color: @error-red !important;
+}
+
