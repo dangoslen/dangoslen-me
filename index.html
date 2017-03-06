@@ -6,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="description" content="The personal portal for the projects and ideas of Dan Goslen.">
     <meta name="author" content="Dan Goslen"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+
     <!-- Local Styles -->
     <link rel="stylesheet" type="text/css" href="resources/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-    
+
     <!-- Font Awesome -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="https://use.fontawesome.com/8a22bc47c7.js"></script>
-    
+
     <script src="resources/js/description.js"></script>
 </head>
 
@@ -29,76 +29,65 @@
             </nav>
         </div>
     </section>
-	
+
     <section class="main">
         <div class="container">
+          <div class="row">
+              	<h4>I'm a <my-description></my-description></h4>
+          </div>
+        </div>
+	</section>
 
-        <div class="row">
-			
-            	<h2>Hi Friend!</h2>
-            	<p>
-            	My name is Dan. You probably knew that already, but a little redundancy never hurt anyone right? What you might not know is all the things I consider myself to be. I'm a:
-            	<my-description></my-description>
-            	</p>
-            
-        </div>
-        <div class="row">
-            	<p>
-            	Well, fill in the blank I guess. This is just a quick personal landing page for "all things Dan". Below you will 
-	            find links to my vairous online presences for coding, writing, recordings, professional resume and a few other things. I'm a fan of 
-    	        write once principles, so I don't have much here besides a few pointers to other references. Lets hope you don't hit any <code>null</code> values... 
-        	    and if you do, please message me by clicking the email icon below.
-        	    </p>
-        	    <p>
-        	    Thanks for visiting!
-        	    </p>
-        </div>
-        <div class="links row">
-           <div class="two columns">
-               <div class="center centered-text"> 
-                    <a href="https://www.github.com/dangoslen" target="_blank">
-                    <span class="lower-icon"><i class="fa fa-github" aria-hidden="true"></i></span>
-                    <div>Code</div>
-                </div>
-           </div>
-           <div class="two columns">
-               <div class="center centered-text">
-                    <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
-                    <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-                    <div>Professional</div>
-                </div>
-           </div>
-           <div class="two columns">
-               <div class="center centered-text">
-                    <a href="http://music.dangoslen.me" target="_blank">
-                    <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
-                    <div>Recordings</div>
-               </div>
-           </div>
-           <div class="two columns">
-                <div class="center centered-text">
-                    <a href="https://medium.com/@dangoslen" target="_blank">
-                    <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
-                    <div>Writings</div>
-                </div>
-           </div>
-           <div class="two columns">
-                <div class="center centered-text">
-                    <a href="https://www.twitter.com/@dangoslen" target="_blank">
-                    <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                    <div>Twitter</div>
-                </div>
-           </div>
-           <div class="two columns">
-                <div class="center centered-text">
-                    <a ng-click="showEmailModal=true" ng-init="showEmailModal=false">
-                    <span class="lower-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <div>Email Me</div>
-                    </a>
-                </div>
-           </div>
-	</section>    
-	<section>
+  <section class="links">
+    <div class="container">
+      <div class="row">
+         <div class="two columns">
+             <div class="center centered-text">
+                  <a href="https://www.github.com/dangoslen" target="_blank">
+                  <span class="lower-icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                  <div>Code</div>
+              </div>
+         </div>
+         <div class="two columns">
+             <div class="center centered-text">
+                  <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
+                  <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                  <div>Professional</div>
+              </div>
+         </div>
+         <div class="two columns">
+             <div class="center centered-text">
+                  <a href="http://music.dangoslen.me" target="_blank">
+                  <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
+                  <div>Recordings</div>
+             </div>
+         </div>
+         <div class="two columns">
+              <div class="center centered-text">
+                  <a href="https://medium.com/@dangoslen" target="_blank">
+                  <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
+                  <div>Writings</div>
+              </div>
+         </div>
+         <div class="two columns">
+              <div class="center centered-text">
+                  <a href="https://www.twitter.com/@dangoslen" target="_blank">
+                  <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                  <div>Twitter</div>
+              </div>
+         </div>
+         <div class="two columns">
+              <div class="center centered-text">
+                  <a ng-click="showEmailModal=true" ng-init="showEmailModal=false">
+                  <span class="lower-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  <div>Email Me</div>
+                  </a>
+              </div>
+         </div>
+       </div>
+  </section>
+
+  <section>
 	   <modal title="Email Me" open="showEmailModal" id="email-me-modal" ng-class="{ 'hidden': !showEmailModal }" >
              <form name="emailMeForm" novalidate>
                 <div class="row">
