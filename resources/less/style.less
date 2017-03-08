@@ -12,6 +12,15 @@ body {
     color: shadow-grey;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
 .spaced-section {
   margin-top: @default-padding;
 }
@@ -75,6 +84,13 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     box-shadow: inset 0px -5px 10px 0px @shadow-grey;
 }
 
+.header .container .row {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .header h1 span {
     text-shadow: -4px 4px @shadow-grey;
     vertical-align: middle;
@@ -91,6 +107,10 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
 
 .main .description {
     .larger-text;
+}
+
+.main .intro-text p {
+  font-size: 1.5em;
 }
 
 .links {

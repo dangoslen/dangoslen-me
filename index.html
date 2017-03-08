@@ -18,13 +18,19 @@
     <script src="resources/js/description.js"></script>
 </head>
 
-
 <body>
-    <section class="header row">
+    <section class="header">
         <div class="container">
-             <div class="six columns">
+          <div class="row">
+
+            <div class="nine columns">
                 <h1><span>DAN</span><span>{</span><span>GOSLEN</span><span>}</span></h1>
             </div>
+
+            <div class="three columns">
+                <img id="profile" src="resources/img/me.png" class="img-circle u-full-max-width" />
+            </div>
+
             <nav>
             </nav>
         </div>
@@ -32,82 +38,95 @@
 
     <section class="main">
         <div class="container">
-          <div class="row">
-              	<h4>I'm a <my-description></my-description></h4>
+            <div class="row intro-text">
+                <h2>Summary</h2>
+                <p>I'm a {<code>Software Engineer</code>} working to build helpful, meaningful and technically excellent software systems.</p>
           </div>
-        </div>
+
+          <div class="row intro-text">
+            <h2>Experience</h2>
+            <p>I currently work at <a src="bandwidth.com" target="_blank" >Bandwidth.com</a>, which is a VoIP Telecom company.
+          </div>
+          <div class="row intro-text">
+            <p>I don't know everything - but I'd like to (I think everyone would like to too). I do have a deep desire to understand the world and learn more about it. Especially when it comes to Software, Coffee, Music or how to have fun outside.</p>
+            <p>I currently live in {<code>Raleigh, NC</code>}, which is a pretty great place to live and is full of new things everyday.</p>
+          </div>
+        <hr/>
 	</section>
 
-  <section class="links">
-    <div class="container">
-      <div class="row">
-         <div class="two columns">
-             <div class="center centered-text">
-                  <a href="https://www.github.com/dangoslen" target="_blank">
-                  <span class="lower-icon"><i class="fa fa-github" aria-hidden="true"></i></span>
-                  <div>Code</div>
-              </div>
-         </div>
-         <div class="two columns">
-             <div class="center centered-text">
-                  <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
-                  <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-                  <div>Professional</div>
-              </div>
-         </div>
-         <div class="two columns">
-             <div class="center centered-text">
-                  <a href="http://music.dangoslen.me" target="_blank">
-                  <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
-                  <div>Recordings</div>
-             </div>
-         </div>
-         <div class="two columns">
-              <div class="center centered-text">
-                  <a href="https://medium.com/@dangoslen" target="_blank">
-                  <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
-                  <div>Writings</div>
-              </div>
-         </div>
-         <div class="two columns">
-              <div class="center centered-text">
-                  <a href="https://www.twitter.com/@dangoslen" target="_blank">
-                  <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                  <div>Twitter</div>
-              </div>
-         </div>
-         <div class="two columns">
-              <div class="center centered-text">
-                  <a ng-click="showEmailModal=true" ng-init="showEmailModal=false">
-                  <span class="lower-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                  <div>Email Me</div>
-                  </a>
-              </div>
+  <section class="container">
+    <h2>Contact Me</h2>
+    <div class="row">
+      <form name="emailMeForm" novalidate>
+       <div class="row">
+         <div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
+             <label>Name</label>
+             <input name="name" type="text" class="u-full-width" ng-model="name" required />
+           </div>
+           <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
+             <label>Email Address</label>
+             <input name="email" type="email" class="u-full-width" ng-model="emai" required />
+           </div>
+       </div>
+       <div class="row">
+         <div class="twelve columns">
+             <label>Message</label>
+             <textarea class="u-full-width" name="message" ng-model="message" required></textarea>
          </div>
        </div>
+      </form>
+    </div>
+    <hr />
   </section>
 
-  <section>
-	   <modal title="Email Me" open="showEmailModal" id="email-me-modal" ng-class="{ 'hidden': !showEmailModal }" >
-             <form name="emailMeForm" novalidate>
-                <div class="row">
-                	<div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
-                    	<label>Name</label>
-                    	<input name="name" type="text" class="u-full-width" ng-model="name" required />
-                    </div>
-                    <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
-	                    <label>Email Address</label>
-                    	<input name="email" type="email" class="u-full-width" ng-model="emai" required />
-                    </div>
-                </div>
-                <div class="row">
-                	<div class="twelve columns">
-                    	<label>Message</label>
-                    	<textarea class="u-full-width" name="message" ng-model="message" required></textarea>
-                	</div>
-                </div>
-            </form>
-	   </modal>
-	</section>
+  <section class="links container">
+    <h2>Links</h2>
+    <div class="row">
+       <div class="two columns">
+           <div class="center centered-text">
+                <a href="https://www.github.com/dangoslen" target="_blank">
+                <span class="lower-icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                <div>Code</div>
+            </div>
+       </div>
+       <div class="two columns">
+           <div class="center centered-text">
+                <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
+                <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                <div>Professional</div>
+            </div>
+       </div>
+       <div class="two columns">
+           <div class="center centered-text">
+                <a href="http://music.dangoslen.me" target="_blank">
+                <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
+                <div>Recordings</div>
+           </div>
+       </div>
+       <div class="two columns">
+            <div class="center centered-text">
+                <a href="https://medium.com/@dangoslen" target="_blank">
+                <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
+                <div>Writings</div>
+            </div>
+       </div>
+       <div class="two columns">
+            <div class="center centered-text">
+                <a href="https://www.twitter.com/@dangoslen" target="_blank">
+                <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                <div>Twitter</div>
+            </div>
+       </div>
+       <div class="two columns">
+            <div class="center centered-text">
+                <a ng-click="showEmailModal=true" ng-init="showEmailModal=false">
+                <span class="lower-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <div>Email Me</div>
+                </a>
+            </div>
+       </div>
+      <hr />
+  </section>
+
 </body>
 </html>
