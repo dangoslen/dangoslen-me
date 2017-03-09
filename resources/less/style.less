@@ -6,10 +6,12 @@
 @default-padding: 4.5rem;
 @orange: #fd863f;
 @shadow-grey: #7b6a6a;
+@font-gray: lighten(black, 25%);
 @error-red: #a94442;
 
 body {
     color: shadow-grey;
+    margin-bottom: @default-padding * 2;
 }
 
 img {
@@ -110,11 +112,8 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
 }
 
 .main .intro-text p {
-  font-size: 1.5em;
-}
-
-.links {
-  .spaced-section;
+  font-size: 1.4em;
+  color: @font-gray;
 }
 
 .lower-icon {
