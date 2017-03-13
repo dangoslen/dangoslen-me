@@ -6,12 +6,12 @@
 @default-padding: 4.5rem;
 @orange: #fd863f;
 @shadow-grey: #7b6a6a;
-@font-gray: lighten(black, 25%);
+@font-gray: lighten(black, 28%);
 @error-red: #a94442;
 
 body {
-    color: shadow-grey;
     margin-bottom: @default-padding * 2;
+    color: @font-gray;
 }
 
 img {
@@ -59,14 +59,6 @@ a:hover {
     color: @orange;
 }
 
-.parrallax-slide {
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /* Skeleton blue outline override */
 input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
     border: 1px solid @orange;
@@ -93,9 +85,20 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
   flex-wrap: wrap;
 }
 
+.header h1 {
+  text-align: center;
+  margin-bottom: @default-padding;
+}
+
 .header h1 span {
     text-shadow: -4px 4px @shadow-grey;
     vertical-align: middle;
+}
+
+@media (min-width: 550px) {
+  .header h1 {
+    text-align: left;
+  }
 }
 
 .header h1 span:nth-child(even) {
@@ -111,9 +114,8 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     .larger-text;
 }
 
-.main .intro-text p {
+.main .intro-text {
   font-size: 1.4em;
-  color: @font-gray;
 }
 
 .lower-icon {
@@ -124,36 +126,48 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     margin-top: 1.5rem;
 }
 
-/* Modal Styles */
-.modal-overlay {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.6);
+/** Timeline Styles **/
+.timeline ul {
+  border-left: 6px solid @orange;
 }
 
-.modal-container {
-    position: relative;
-    top: @default-padding;
+.timeline ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
 }
 
-.modal-content {
-    .center;
-    .rounded-corners;
-    min-width: 300px;
-    background: white;
-    box-shadow: 0px 0px 6px 6px #313131;
-    padding: 16px;
-    content: @shadow-grey;
+.timeline ul li::before, .timeline ul li::after {
+    position: absolute;
+    display: block;
 }
 
-.modal-content label, h2 {
-    color: @shadow-grey;
+.timeline ul li::before, .timeline ul li:last-of-type::after  {
+  content: '';
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.timeline ul li::before {
+  top: -2px;
+  width: 12;
+  height: 12px;
+  background: white;
+  border: 6px solid @orange;
+  left: -3px;
+}
+
+.timeline ul li:last-of-type::after  {
+  bottom: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: @orange;
+}
+
+.timeline ul li div {
+  position: relative;
+  top: -10px;
 }
 
 form textarea {
