@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="https://use.fontawesome.com/8a22bc47c7.js"></script>
 
-    <script src="resources/js/description.js"></script>
+    <script src="resources/js/dangoslen-me.js"></script>
 </head>
 
 <body>
@@ -83,8 +83,7 @@
 
   <section class="container">
     <h2>Contact Me</h2>
-    <div class="row">
-      <form name="emailMeForm" novalidate>
+      <form name="emailMeForm" ng-controller="EmailMeController" novalidate >
        <div class="row">
          <div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
              <label>Name</label>
@@ -92,7 +91,7 @@
            </div>
            <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
              <label>Email Address</label>
-             <input name="email" type="email" class="u-full-width" ng-model="emai" required />
+             <input name="email" type="email" class="u-full-width" ng-model="email" required />
            </div>
        </div>
        <div class="row">
@@ -101,9 +100,13 @@
              <textarea class="u-full-width" name="message" ng-model="message" required></textarea>
          </div>
        </div>
+       <div class="row">
+         <div class="twelve columns">
+           <button class="u-full-width" ng-click="sendEmail()" >Send Email</button>
+        </div>
+       </div>
       </form>
-    </div>
-    <hr />
+      <hr />
   </section>
 
   <section class="links container">
