@@ -8,6 +8,9 @@
 @shadow-grey: #7b6a6a;
 @font-gray: lighten(black, 28%);
 @error-red: #a94442;
+@error-red-background: #dda8a7;
+@success-green: #059105;
+@success-green-background: #1dd21d;
 
 body {
     margin-bottom: @default-padding * 2;
@@ -40,12 +43,13 @@ img {
     font-size: 125%;
 }
 
-.rounded-corners {
-	border-radius: 20px;
+.rounded-corners(@length) {
+	border-radius: @length;
 }
 
 .hidden {
 	visibility: hidden;
+  display: none;
 }
 
 /* Global Settings */
@@ -59,18 +63,21 @@ a:hover, button:hover, input[type="submit"]:hover, button:focus, input[type="sub
     color: @orange;
 }
 
-button:hover, input[type="submit"]:hover, button:focus, input[type="submit"]:focus  {
-  border: 1px @orange solid;
+button, input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], button, input[type="submit"], textarea, select {
+	color: @shadow-grey;
+}
+
+button[disabled], input[disabled] {
+  cursor: default !important;
+  border-color: lighten(color(@shadow-grey), 20%) !important;
+  color: lighten(color(@shadow-grey), 20%) !important;
 }
 
 /* Skeleton blue outline override */
-input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+button:focus, input[type="email"]:focus, input[type="submit"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus,
+button:hover, input[type="email"]:hover, input[type="submit"]:hover, input[type="number"]:hover, input[type="search"]:hover, input[type="text"]:hover, input[type="tel"]:hover, input[type="url"]:hover, input[type="password"]:hover, textarea:hover, select:hover {
     border: 1px solid @orange;
     outline: 0;
-}
-
-input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], button, input[type="submit"], textarea, select {
-	color: @shadow-grey;
 }
 
 /* Header styles */
@@ -185,6 +192,25 @@ form input[type="submit"] {
 }
 
 /* Forms */
+.feedback {
+  .rounded-corners(5px);
+  .centered-text;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+div.feedback.has-error {
+    border: 1px solid @error-red;
+    color: @error-red;
+    background-color: @error-red-background;
+}
+
 .has-error input {
     border-color: @error-red !important;
+}
+
+div.feedback.is-success {
+  border: 1px solid @success-green;
+  color: @success-green;
+  background-color: @success-green-background;
 }

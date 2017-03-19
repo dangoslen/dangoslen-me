@@ -58,6 +58,7 @@
                 <div>
                   <h4>Present :: Bandwidth.com</h4>
                   <p>I currently work at <a src="bandwidth.com" target="_blank" >Bandwidth.com</a>, a VoIP Telecom company based in Raleigh, as a Software Engineer. I've worked on several projects ranging from database performance optimization to RESTful web services.</p>
+                  <p>While working at Bandwidth, I've recieved several awards and honors. One of which was securing a patent via a program we call Sabbaticals which I now co-lead. The Sabbatical program is designed to help developers always be learning and adopting new technologies to keep Bandwith on its A game.</p>
                 </div>
               </li>
 
@@ -65,7 +66,6 @@
                 <div>
                   <h4>June 2013 - December 2013 :: Cisco Systems</h4>
                   <p>I worked at Cisco System on the Smart Web Technology Group building web-applications across the whole stack and especially helped me refine my front-end development skills.</p>
-                  <p>While working at Bandwidth, I've recieved several awards and honors. One of which was securing a patent via a program we call Sabbaticals which I now co-lead. The Sabbatical program is designed to help developers always be learning and adopting new technologies to keep Bandwith on its A game.</p>
                 </div>
               </li>
 
@@ -83,7 +83,12 @@
 
   <section class="container">
     <h2>Contact Me</h2>
-      <form name="emailMeForm" ng-controller="EmailMeController" novalidate >
+      <form name="emailMeForm" ng-controller="EmailMeController" ng-submit="sendEmail()" novalidate >
+      <div class="row">
+        <div class="twelve columns feedback" ng-class="{ 'hidden': !$email_response.sent, 'is-success': $email_response.success, 'has-error' : !$email_response.success }" >
+          <span>{{ $email_response.text }}</span>
+        </div>
+      </div>
        <div class="row">
          <div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
              <label>Name</label>
@@ -102,7 +107,7 @@
        </div>
        <div class="row">
          <div class="twelve columns">
-           <button class="u-full-width" ng-click="sendEmail()" >Send Email</button>
+           <input type="submit" class="u-full-width" ng-disabled="emailMeForm.$invalid" value="Send Me an Email!"/>
         </div>
        </div>
       </form>
