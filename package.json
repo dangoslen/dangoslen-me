@@ -5,10 +5,9 @@
   "author": "Dan Goslen",
   "license": "ISC",
   "devDependencies": {
-    "less": "^2.7.2",
-    "less-watch-compiler": "1.4.2"
-  },
-  "dependencies": {
-    "angular": "^1.6.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "jit-grunt": "^0.10.0"
   }
 }
