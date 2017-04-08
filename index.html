@@ -81,43 +81,11 @@
         <hr/>
 	</section>
 
-  <section class="container">
-    <h2>Contact Me</h2>
-      <form name="emailMeForm" ng-controller="EmailMeController" ng-submit="sendEmail()" novalidate >
-      <div class="row">
-        <div class="twelve columns feedback" ng-class="{ 'hidden': !$email_response.sent, 'is-success': $email_response.success, 'has-error' : !$email_response.success }" >
-          <span>{{ $email_response.text }}</span>
-        </div>
-      </div>
-       <div class="row">
-         <div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
-             <label>Name</label>
-             <input name="name" type="text" class="u-full-width" ng-model="name" required />
-           </div>
-           <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
-             <label>Email Address</label>
-             <input name="email" type="email" class="u-full-width" ng-model="email" required />
-           </div>
-       </div>
-       <div class="row">
-         <div class="twelve columns">
-             <label>Message</label>
-             <textarea class="u-full-width" name="message" ng-model="message" required></textarea>
-         </div>
-       </div>
-       <div class="row">
-         <div class="twelve columns">
-           <input type="submit" class="u-full-width" ng-disabled="emailMeForm.$invalid" value="Send Me an Email!"/>
-        </div>
-       </div>
-      </form>
-      <hr />
-  </section>
-
   <section class="links container">
     <h2>Links</h2>
-    <p>Below you can find links to my code, my Linked In profile, the music I make and some of the things I write about.
+    <p>Below you can find links to some of my code (the code I can actually make open source), my Linked In profile, the music I make, where I write my longer posts (Medium) and where I sometimes write shorted posts (Twitter).
     <div class="row">
+      <div class="one column"></div>
        <div class="two columns">
            <div class="center centered-text">
                 <a href="https://www.github.com/dangoslen" target="_blank">
@@ -128,33 +96,72 @@
        <div class="two columns">
            <div class="center centered-text">
                 <a href="https://www.linkedin.com/in/dangoslen" target="_blank">
-                <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-                <div>Professional</div>
+                  <span class="lower-icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                  <div>Professional</div>
+                </a>
             </div>
        </div>
        <div class="two columns">
            <div class="center centered-text">
                 <a href="http://music.dangoslen.me" target="_blank">
-                <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
-                <div>Recordings</div>
+                  <span class="lower-icon"><i class="fa fa-bandcamp" aria-hidden="true"></i></span>
+                  <div>Recordings</div>
+                </a>
            </div>
        </div>
        <div class="two columns">
             <div class="center centered-text">
                 <a href="https://medium.com/@dangoslen" target="_blank">
-                <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
-                <div>Writings</div>
+                  <span class="lower-icon"><i class="fa fa-medium" aria-hidden="true"></i></span>
+                  <div>Writings</div>
+                </a>
             </div>
        </div>
        <div class="two columns">
             <div class="center centered-text">
                 <a href="https://www.twitter.com/@dangoslen" target="_blank">
-                <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                <div>Twitter</div>
+                  <span class="lower-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                  <div>Twitter</div>
+                </a>
             </div>
        </div>
+       <div class="one column"></div>
      </div>
 
+    <hr />
+  </section>
+
+  <section class="container">
+    <h2>Contact Me</h2>
+    <p>If you still need to get in contact with me in some other way, send me an email below.</p>
+    <form name="emailMeForm" ng-controller="EmailMeController" ng-submit="sendEmail()" novalidate >
+    <div class="row">
+      <div class="twelve columns feedback" ng-class="{ 'hidden': !$email_response.sent, 'is-success': $email_response.success, 'has-error' : !$email_response.success }" >
+        <span>{{ $email_response.text }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns" ng-class="{ 'has-error' : emailMeForm.name.$invalid && !emailMeForm.name.$pristine }">
+        <label>Name</label>
+        <input name="name" type="text" class="u-full-width" ng-model="name" required />
+      </div>
+      <div class="six columns" ng-class="{ 'has-error' : emailMeForm.email.$invalid && !emailMeForm.email.$pristine }">
+        <label>Email Address</label>
+        <input name="email" type="email" class="u-full-width" ng-model="email" required />
+      </div>
+    </div>
+    <div class="row">
+     <div class="twelve columns">
+         <label>Message</label>
+         <textarea class="u-full-width" name="message" ng-model="message" required></textarea>
+     </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+       <input type="submit" class="u-full-width" ng-disabled="emailMeForm.$invalid" value="Send Me an Email!"/>
+      </div>
+    </div>
+    </form>
     <hr />
   </section>
 
