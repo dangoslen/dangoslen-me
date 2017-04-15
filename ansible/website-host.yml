@@ -1,0 +1,17 @@
+---
+- hosts: website-host
+  tasks:
+    - name: Create directory_mode
+      file: path=~/dangoslen.me state=directory
+      tags: ['deploy']
+
+- hosts: website-host
+  tasks:
+    - name: Copy files to home directory
+      copy: src=../build dest=~/dangoslen.me directory_mode=yes force=yes
+      tags: ['deploy']
+
+- hosts: website-host
+  become: true
+  roles:
+    - { role: geerlingguy.apache, tags: ['dependency'] }

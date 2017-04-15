@@ -138,28 +138,28 @@ button:hover, input[type="email"]:hover, input[type="submit"]:hover, input[type=
 }
 
 /** Timeline Styles **/
-.timeline ul {
+.timeline {
   border-left: 6px solid @orange;
 }
 
-.timeline ul li {
+.timeline > li {
   list-style: none;
   position: relative;
   padding-left: 20px;
 }
 
-.timeline ul li::before, .timeline ul li::after {
+.timeline > li::before, .timeline > li::after {
     position: absolute;
     display: block;
 }
 
-.timeline ul li::before, .timeline ul li:last-of-type::after  {
+.timeline > li::before, .timeline > li:last-of-type::after  {
   content: '';
   transform: translateX(-50%);
   border-radius: 50%;
 }
 
-.timeline ul li::before {
+.timeline > li::before {
   top: -2px;
   width: 12;
   height: 12px;
@@ -168,7 +168,7 @@ button:hover, input[type="email"]:hover, input[type="submit"]:hover, input[type=
   left: -3px;
 }
 
-.timeline ul li:last-of-type::after  {
+.timeline > li:last-of-type::after  {
   bottom: -3px;
   left: -3px;
   width: 6px;
@@ -176,9 +176,14 @@ button:hover, input[type="email"]:hover, input[type="submit"]:hover, input[type=
   background: @orange;
 }
 
-.timeline ul li div {
+.timeline > li div {
   position: relative;
   top: -10px;
+}
+
+.normal-list li {
+  list-style-type: disc;
+  list-style-position: initial;
 }
 
 form textarea {

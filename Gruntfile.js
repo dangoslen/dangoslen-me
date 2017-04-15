@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // ===========================================================================
   // Grunt Configurition
@@ -42,14 +43,22 @@ module.exports = function(grunt) {
     uglify: {
       production: {
         files: {
-          "resources/js/dangoslen-me.js": ["resources/js/source/dangoslen-me.js"]
+          "resources/js/dangoslen-me.js": ["resources/js/dangoslen-me.js"]
         }
       }
     },
+    copy: {
+        default: {
+          files: [ //Copy javascript
+            {expand: true, src: ['resources/js/**'], dest: 'build/'},
+            {expand: true, src: ['resources/css/**'], dest: 'build/'}
+          ]
+        }
+    },
     watch: {
       styles: {
-        files: ['resources/less/style.less'], // which files to watch
-        tasks: ['less'],
+        files: ['resources/less/style.less', 'resources/js/*.js'], // which files to watch
+        tasks: ['less', 'copy'],
         options: {
           nospawn: true
         }
@@ -60,6 +69,6 @@ module.exports = function(grunt) {
   // ===========================================================================
   // Declare and Register our tasks
   // ===========================================================================
-  grunt.registerTask('default', ['less', 'watch']);
-  grunt.registerTask('production', ['less:production', 'uglify:production'])
+  grunt.registerTask('default', ['less', 'copy', 'watch'])
+  grunt.registerTask('production', ['less:production', 'uglify:production', 'copy'])
 };
