@@ -36,7 +36,9 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          "resources/css/style.css": "resources/less/style.less" // destination file and source file
+          "resources/css/style.css": "resources/less/style.less", // destination file and source file
+          "resources/css/skeleton.css": "resources/css/skeleton.css", // destination file and source file
+          "resources/css/normalize.css": "resources/css/normalize.css" // destination file and source file
         }
       }
     },
