@@ -1,4 +1,2 @@
 [website-host]
-flattail.dreamhost.com
-remote_user=dangoslen
-ansible_ssh_private_key_file=~/.ssh/id_rsa
+flattail.dreamhost.com ansible_user=dangoslen ansible_ssh_private_key_file=~/.ssh/id_rsa

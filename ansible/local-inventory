@@ -1,2 +1,2 @@
 [website-host]
-192.168.50.4 remote_user=dangoslen ansible_user=dangoslen ansible_ssh_private_key_file=~/.ssh/id_rsa
+192.168.50.4 ansible_user=dangoslen ansible_ssh_private_key_file=~/.ssh/id_rsa

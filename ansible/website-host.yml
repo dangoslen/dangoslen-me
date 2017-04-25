@@ -1,17 +1,22 @@
 ---
 - hosts: website-host
   tasks:
+    - name: Check for directory
+      stat: path=~/dangoslen.me
+      register: directory_exists
+      tags: ['deploy']
+
     - name: Create directory_mode
-      file: path=~/dangoslen.me state=directory
+      file: path=~/dangoslen.me state=directory owner=dangoslen group=dangoslen mode=0755
       tags: ['deploy']
+      when: directory_exists.stat.exists == False
 
-- hosts: website-host
-  tasks:
     - name: Copy files to home directory
-      copy: src=../build dest=~/dangoslen.me directory_mode=yes force=yes
+      copy: src=../build/ dest=~/dangoslen.me force=yes
       tags: ['deploy']
 
 - hosts: website-host
-  become: true
+  vars_files:
+    - vars/apache.yml
   roles:
-    - { role: geerlingguy.apache, tags: ['dependency'] }
+    - { role: geerlingguy.apache, become: true, tags: ['dependency'] }

@@ -1,0 +1,4 @@
+apache_remove_default_vhost: true
+apache_listen_port: 8080
+apache_vhosts:
+  - { servername: "dangoslen.example", documentroot: "/home/dangoslen/dangoslen.me" }
