@@ -2,3 +2,4 @@
 /resources/css/style.css
 build/index.html
 build/resources
+/ansible/.vagrant
