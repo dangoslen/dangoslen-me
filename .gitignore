@@ -3,3 +3,4 @@
 build/index.html
 build/resources
 /ansible/.vagrant
+*.retry

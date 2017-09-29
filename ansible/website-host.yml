@@ -7,7 +7,7 @@
       tags: ['deploy']
 
     - name: Create directory_mode
-      file: path=~/dangoslen.me state=directory owner=dangoslen group=dangoslen mode=0755
+      file: path=~/dangoslen.me state=directory owner=dangoslen mode=0755
       tags: ['deploy']
       when: directory_exists.stat.exists == False
 
