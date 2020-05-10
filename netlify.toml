@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://blog.dangoslen.me"
+  to = "https://medium.com/@dangoslen"
+  status = 301
+  force = true
